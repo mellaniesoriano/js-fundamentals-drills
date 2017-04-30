@@ -36,7 +36,9 @@ var sumArrays = function(arr1, arr2) {
  * @param {String}
  * @return {Number}
  */
-var stringCount;
+var stringCount = function(str){
+  return str.length;
+};
 
 /* #arrayLength
  *
@@ -45,7 +47,9 @@ var stringCount;
  * @param {String}
  * @return {Number}
  */
-var arrayLength;
+var arrayLength = function(str){
+  return str.length;
+};
 
 /* #countAll
  *
@@ -54,7 +58,13 @@ var arrayLength;
  * @param {Array}
  * @return {Number}
  */
-var countAll;
+var countAll = function(arr){
+  var sum = 0;
+  for(var i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum;
+};
 
 /* #countStrings
  *
@@ -63,7 +73,13 @@ var countAll;
  * @param {Array}
  * @return {Array}
  */
-var countStrings;
+var countStrings = function(arr){
+  var newArr = [];
+  for(var i = 0; i < arr.length; i++){
+    newArr.push(arr[i].length);
+  }
+  return newArr;
+};
 
 /* #countAllStrings
  *
@@ -272,7 +288,11 @@ var getValues;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  var keyNames = Object.keys(obj);
+  return keyNames;
+};
+
 
 /* #objectToArray
  *
@@ -387,10 +407,10 @@ var tupleConvertToObject;
 module.exports = {
   doubleArray: doubleArray,
   sumArrays: sumArrays,
-  stringCount: null,
-  arrayLength: null,
-  countAll: null,
-  countStrings: null,
+  stringCount: stringCount,
+  arrayLength: arrayLength,
+  countAll: countAll,
+  countStrings: countStrings,
   countAllStrings: null,
   convertToArray: null,
   objectSize: null,
@@ -413,7 +433,7 @@ module.exports = {
   tupleToObjectReverse: null,
   strToKeys: null,
   getValues: null,
-  getKeys: null,
+  getKeys: getKeys,
   objectToArray: null,
   arrayToObject: null,
   arraysToObject: null,
