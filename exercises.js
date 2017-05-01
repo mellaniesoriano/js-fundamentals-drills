@@ -240,7 +240,15 @@ var getKeys = function(obj){
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive;
+var sumAllPositive = function(str){
+  var sum = 0;
+  for(key in str){
+    if(str[key] >= 0){
+      sum += str[key];
+    }
+  }
+  return sum;
+};
 
 /* #stringCountBelowThree
  *
@@ -249,7 +257,15 @@ var sumAllPositive;
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = function(arr){
+  var count = 0;
+  for(key in arr){
+    if(arr[key].length <= 3){
+      count++;
+    }
+  }
+  return count;
+};
 
 /* #countObjects
  *
@@ -475,8 +491,8 @@ module.exports = {
   moreThanTenLetters: moreThanTenLetters,
   multiplyAll: multiplyAll,
   getKeys: getKeys,
-  sumAllPositive: null,
-  stringCountBelowThree: null,
+  sumAllPositive: sumAllPositive,
+  stringCountBelowThree: stringCountBelowThree,
   countObjects: null,
   getObjectKeys: null,
   getObjectValues: null,
