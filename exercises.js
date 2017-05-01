@@ -289,7 +289,10 @@ var countObjects = function(arr){
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys;
+var getObjectKeys = function(obj){
+  var keyNames = Object.keys(obj);
+  return keyNames;
+};
 
 /* #getObjectValues
  *
@@ -298,7 +301,13 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+var getObjectValues = function(obj){
+  var newArr = [];
+  for(key in obj){
+    newArr.push(obj[key]);
+  }
+  return newArr;
+};
 
 /* #makeObject
  *
@@ -500,8 +509,8 @@ module.exports = {
   sumAllPositive: sumAllPositive,
   stringCountBelowThree: stringCountBelowThree,
   countObjects: countObjects,
-  getObjectKeys: null,
-  getObjectValues: null,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
   makeObject: null,
   makeObjectReverse: null,
   tupleToObject: null,
