@@ -213,7 +213,13 @@ var moreThanTenLetters = function(str){
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = function(arr){
+  var product = 1;
+  for(var i = 0; i < arr.length; i++){
+    product *= arr[i];
+  }
+  return product;
+};
 
 /* #getKeys
  *
@@ -222,7 +228,10 @@ var multiplyAll;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  var keyNames = Object.keys(obj);
+  return keyNames;
+};
 
 /* #sumAllPositive
  *
@@ -464,8 +473,8 @@ module.exports = {
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
-  multiplyAll: null,
-  getKeys: null,
+  multiplyAll: multiplyAll,
+  getKeys: getKeys,
   sumAllPositive: null,
   stringCountBelowThree: null,
   countObjects: null,
