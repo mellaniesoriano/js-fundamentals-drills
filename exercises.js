@@ -156,7 +156,9 @@ var poppedArray = function(arr){
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = function(str){
+  return str.split('');
+};
 
 /* #lengthOfLast
  *
@@ -439,7 +441,7 @@ module.exports = {
   objectSize: objectSize,
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
-  splitString: null,
+  splitString: splitString,
   lengthOfLast: null,
   sumBelowTen: null,
   moreThanTenLetters: null,
