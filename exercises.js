@@ -303,8 +303,8 @@ var getObjectKeys = function(obj){
  */
 var getObjectValues = function(obj){
   var newArr = [];
-  for(key in obj){
-    newArr.push(obj[key]);
+  for(values in obj){
+    newArr.push(obj[values]);
   }
   return newArr;
 };
@@ -385,7 +385,13 @@ var strToKeys = function(arr){
  * @param {Object}
  * @return {Array}
  */
-var getValues;
+var getValues = function(obj){
+  var newArr = [];
+  for(values in obj){
+    newArr.push(obj[values]);
+  }
+  return newArr;
+};
 
 /* #getKeys
  *
@@ -408,7 +414,13 @@ var getKeys = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj){
+  var newArr = [];
+  for(key in obj){
+    newArr.push([key, obj[key]]);
+  }
+  return newArr;
+ };
 
 /* #arrayToObject
  *
@@ -538,9 +550,9 @@ module.exports = {
   tupleToObject: tupleToObject,
   tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: strToKeys,
-  getValues: null,
+  getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
+  objectToArray: objectToArray,
   arrayToObject: null,
   arraysToObject: null,
   objectsToTuples: null,
