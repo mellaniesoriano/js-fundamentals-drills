@@ -317,7 +317,11 @@ var getObjectValues = function(obj){
  * @param {String}
  * @return {Object}
  */
-var makeObject;
+var makeObject = function(str1, str2){
+  var newObj  = {};
+  newObj[str1] = str2;
+  return newObj;
+};
 
 /* #makeObjectReverse
  *
@@ -327,7 +331,11 @@ var makeObject;
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse;
+var makeObjectReverse = function(str1, str2){
+  var newObj = {};
+  newObj[str2] = str1;
+  return newObj;
+};
 
 /* #tupleToObject
  *
@@ -336,7 +344,11 @@ var makeObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject;
+var tupleToObject = function(arr){
+  var newObj = {};
+  newObj[arr[0]] = arr[1];
+  return newObj;
+};
 
 /* #tupleToObjectReverse
  *
@@ -345,7 +357,11 @@ var tupleToObject;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse;
+var tupleToObjectReverse = function(arr){
+  var newObj = {};
+  newObj[arr[1]] = arr[0];
+  return newObj;
+};
 
 /* #strToKeys
  *
@@ -354,7 +370,13 @@ var tupleToObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr){
+  var newObj = {};
+  for(key in arr){
+    newObj[arr[key]] = 0;
+  }
+  return newObj;
+};
 
 /* #getValues
  *
@@ -511,11 +533,11 @@ module.exports = {
   countObjects: countObjects,
   getObjectKeys: getObjectKeys,
   getObjectValues: getObjectValues,
-  makeObject: null,
-  makeObjectReverse: null,
-  tupleToObject: null,
-  tupleToObjectReverse: null,
-  strToKeys: null,
+  makeObject: makeObject,
+  makeObjectReverse: makeObjectReverse,
+  tupleToObject: tupleToObject,
+  tupleToObjectReverse: tupleToObjectReverse,
+  strToKeys: strToKeys,
   getValues: null,
   getKeys: getKeys,
   objectToArray: null,
