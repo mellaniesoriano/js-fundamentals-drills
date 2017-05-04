@@ -8,10 +8,10 @@
 var doubleArray = function(arr) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
-    result.push(arr[i] * 2)
+    result.push(arr[i] * 2);
   }
   return result;
-}
+};
 
 /* #sumArrays
  *
@@ -23,11 +23,11 @@ var doubleArray = function(arr) {
  */
 var sumArrays = function(arr1, arr2) {
   var sum = 0;
-  for(key in arr1 && arr2){
+  for(var key in arr1 && arr2){
     sum += arr1[key] + arr2[key];
   }
   return sum;
-}
+};
 
 /* #stringCount
  *
@@ -105,7 +105,7 @@ var countAllStrings = function(str){
  */
 var convertToArray = function(obj){
   var newArr = [];
-  for(key in obj){
+  for(var key in obj){
     newArr.push(obj[key]);
   }
   return newArr;
@@ -242,7 +242,7 @@ var getKeys = function(obj){
  */
 var sumAllPositive = function(str){
   var sum = 0;
-  for(key in str){
+  for(var key in str){
     if(str[key] >= 0){
       sum += str[key];
     }
@@ -259,7 +259,7 @@ var sumAllPositive = function(str){
  */
 var stringCountBelowThree = function(arr){
   var count = 0;
-  for(key in arr){
+  for(var key in arr){
     if(arr[key].length <= 3){
       count++;
     }
@@ -276,7 +276,7 @@ var stringCountBelowThree = function(arr){
  */
 var countObjects = function(arr){
   var total = 0;
-  for(key in arr){
+  for(var key in arr){
     total += key.length;
   }
   return total;
@@ -303,7 +303,7 @@ var getObjectKeys = function(obj){
  */
 var getObjectValues = function(obj){
   var newArr = [];
-  for(values in obj){
+  for(var values in obj){
     newArr.push(obj[values]);
   }
   return newArr;
@@ -372,7 +372,7 @@ var tupleToObjectReverse = function(arr){
  */
 var strToKeys = function(arr){
   var newObj = {};
-  for(key in arr){
+  for(var key in arr){
     newObj[arr[key]] = 0;
   }
   return newObj;
@@ -387,7 +387,7 @@ var strToKeys = function(arr){
  */
 var getValues = function(obj){
   var newArr = [];
-  for(values in obj){
+  for(var values in obj){
     newArr.push(obj[values]);
   }
   return newArr;
@@ -416,7 +416,7 @@ var getKeys = function(obj){
  */
 var objectToArray = function(obj){
   var newArr = [];
-  for(key in obj){
+  for(var key in obj){
     newArr.push([key, obj[key]]);
   }
   return newArr;
@@ -430,7 +430,13 @@ var objectToArray = function(obj){
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject;
+var arrayToObject = function(arr){
+  var newObj = {};
+  for(var key in arr){
+    newObj[arr[key]] = false;
+  }
+  return newObj;
+};
 
 /* #arraysToObject
  *
@@ -441,7 +447,13 @@ var arrayToObject;
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject;
+var arraysToObject = function(arr1, arr2){
+  var newObj = {};
+  for(var key in arr1 && arr2){
+    newObj[arr1[key]] = arr2[key];
+  }
+  return newObj;
+};
 
 /* #objectsToTuples
  *
@@ -553,8 +565,8 @@ module.exports = {
   getValues: getValues,
   getKeys: getKeys,
   objectToArray: objectToArray,
-  arrayToObject: null,
-  arraysToObject: null,
+  arrayToObject: arrayToObject,
+  arraysToObject: arraysToObject,
   objectsToTuples: null,
   mapArrayValues: null,
   mapStringCounts: null,
